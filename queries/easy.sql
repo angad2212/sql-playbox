@@ -1,4 +1,5 @@
 -- Select all customers who signed up in 2023.
+select * from customers where signup_date between '2023-01-15' and '2023-12-31'
 
 -- Get the total number of orders.
 
