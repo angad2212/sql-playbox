@@ -5,6 +5,7 @@ select * from customers where signup_date between '2023-01-15' and '2023-12-31'
 select count(*) as number_of_orders from orders
 
 -- Find the total revenue from the Orders table.
+select sum(amount) as total_revenue from Orders;
 
 -- List all products in the "Electronics" category.
 
