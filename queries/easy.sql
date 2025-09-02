@@ -8,6 +8,7 @@ select count(*) as number_of_orders from orders
 select sum(amount) as total_revenue from Orders;
 
 -- List all products in the "Electronics" category.
+select * from products where category = 'Electronics'
 
 -- Get distinct cities of customers.
 
