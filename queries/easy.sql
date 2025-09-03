@@ -20,7 +20,10 @@ select status, count(*) as count from orders group by status
 select round(avg(amount), 2) as average from orders
 
 -- Select all employees in the "Sales" department.
+select * from employees where department = 'Sales'
 
--- Get the highest salary among employees.
+-- Get the employee with the highest salary among all employees.
+select * from employees order by salary desc limit 1
 
 -- Find customers who never placed an order.
+select * from customers where customer_id not in (select distinct customer_id from orders)
