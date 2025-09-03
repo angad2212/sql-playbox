@@ -11,10 +11,13 @@ select sum(amount) as total_revenue from Orders;
 select * from products where category = 'Electronics'
 
 -- Get distinct cities of customers.
+select distinct city from customers
 
 -- Show the count of orders for each status.
+select status, count(*) as count from orders group by status
 
 -- Find the average order amount.
+select round(avg(amount), 2) as average from orders
 
 -- Select all employees in the "Sales" department.
 
