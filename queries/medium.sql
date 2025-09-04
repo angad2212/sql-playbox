@@ -10,7 +10,11 @@ from orders where order_date between '2023-01-01' and '2023-12-31'
 group by month 
 order by month
 
--- List customers who ordered more than 5 products in total.
+-- List customers who ordered more than or equal to 3 products in total.
+select * from customers where customer_id in (
+  select o.customer_id from orders o join orderitems oi on o.order_id = oi.order_id 
+  group by o.customer_id having count(distinct oi.product_id) >= 3
+);
 
 -- Find the most expensive product in each category.
 
