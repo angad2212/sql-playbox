@@ -7,10 +7,10 @@ This repository is a **complete SQL practice kit** designed to cover all the **e
 ## 🔹 What’s Inside?
 - **Database Setup**: A ready-to-use schema (`CompanyDB`) with tables for `Employees`, `Departments`, `Salaries`, `Projects`, and `Customers`.  
 - **Practice Dataset**: Enough sample records to simulate real interview-style problems.  
-- **30 SQL Problems** categorized by difficulty:  
-  - **10 Easy** → Filtering, basic `SELECT`, `WHERE`, `ORDER BY`, `DISTINCT`, simple joins  
-  - **15 Medium** → Aggregations, multi-table joins, subqueries, `GROUP BY`, `HAVING`, set operations  
-  - **5 Hard** → Window functions, advanced subqueries, CTEs, ranking queries, and complex joins  
+- **A Set of Curated SQL Problems** categorized by difficulty:  
+  - **Easy** → Filtering, basic `SELECT`, `WHERE`, `ORDER BY`, `DISTINCT`, simple joins  
+  - **Medium** → Aggregations, multi-table joins, subqueries, `GROUP BY`, `HAVING`, set operations  
+  - **Hard** → Window functions, advanced subqueries, CTEs, ranking queries, and complex joins  
 
 ---
 
