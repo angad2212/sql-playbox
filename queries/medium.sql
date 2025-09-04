@@ -1,6 +1,14 @@
 -- Find the top 3 customers by total spending.
-
+select * from customers where customer_id in (
+  select customer_id from orders order by amount desc limit 3
+) 
 -- Get the number of orders placed per month in 2023.
+select 
+  to_char(order_date, 'YYYY-MM') as month,
+  count(*) as month_orders 
+from orders where order_date between '2023-01-01' and '2023-12-31'
+group by month 
+order by month
 
 -- List customers who ordered more than 5 products in total.
 
