@@ -17,10 +17,20 @@ select * from customers where customer_id in (
 );
 
 -- Find the most expensive product in each category.
-
+select p.name, p.price, p.category from products p
+where p.price = (
+  select max(p2.price) 
+  from products p2 
+  where p2.category = p.category
+);
 -- Get the average salary per department.
+select department, round(avg(salary),2) from employees group by department
 
 -- Find employees who earn more than their manager.
+select e.name from employees e 
+left join employees m 
+on e.manager_id = m.employee_id
+where e.salary > m.salary
 
 -- List orders that include more than 3 different products.
 
