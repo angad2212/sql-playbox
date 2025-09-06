@@ -15,7 +15,6 @@ select * from customers where customer_id in (
   select o.customer_id from orders o join orderitems oi on o.order_id = oi.order_id 
   group by o.customer_id having count(distinct oi.product_id) >= 3
 );
-
 -- Find the most expensive product in each category.
 select p.name, p.price, p.category from products p
 where p.price = (
