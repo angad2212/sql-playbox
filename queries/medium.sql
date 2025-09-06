@@ -46,7 +46,9 @@ select * from customers where customer_id in (
   having count(distinct to_char(order_date, 'YYYY-MM')) >= 2
 )
 -- Show the order with the maximum total amount (considering OrderItems).
-
+select * from orders where amount = (
+  select max(amount) from orders
+)
 -- List employees who do not manage anyone.
 
 -- Rank employees by salary within each department (use RANK()).
