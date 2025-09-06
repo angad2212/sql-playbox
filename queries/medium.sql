@@ -32,8 +32,11 @@ left join employees m
 on e.manager_id = m.employee_id
 where e.salary > m.salary
 
--- List orders that include more than 3 different products.
-
+-- List orders that include more than or equal to 2 different products.
+select * from orders o where o.order_id in (
+  select order_id from orderitems group by order_id
+  having count(distinct product_id) >= 2
+)
 -- Show the product categories with total sales greater than 10,000.
 
 -- Find customers who placed orders in at least 3 different months.
