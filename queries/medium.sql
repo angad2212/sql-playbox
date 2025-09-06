@@ -50,7 +50,9 @@ select * from orders where amount = (
   select max(amount) from orders
 )
 -- List employees who do not manage anyone.
-
+select * from employees where employee_id not in (
+  select distinct manager_id from employees where manager_id is not null
+)
 -- Rank employees by salary within each department (use RANK()).
 
 -- Find the percentage of completed orders vs total orders.
