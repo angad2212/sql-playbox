@@ -38,6 +38,7 @@ select * from orders o where o.order_id in (
   having count(distinct product_id) >= 2
 )
 -- Show the product categories with total sales greater than 10,000.
+select category from products group by category having sum(price) > 10000
 
 -- Find customers who placed orders in at least 3 different months.
 
