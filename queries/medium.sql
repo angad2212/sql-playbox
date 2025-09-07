@@ -62,6 +62,9 @@ select round(((sum(case when status = 'completed' then 1 else 0 end)) * 100.0 /
   count(*)), 2 )
 as percentage_of_completed_orders from orders
 
--- Show customers whose first order was in January 2023.
-
+-- Show customers whose first order was in March 2023.
+select * from customers c where c.customer_id in(
+  select o.customer_id from orders o group by o.customer_id
+  having min(o.order_date) between '2023-03-01' and '2023-03-31'
+)
 -- For each order, calculate the total quantity of items ordered.
