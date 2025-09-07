@@ -68,3 +68,6 @@ select * from customers c where c.customer_id in(
   having min(o.order_date) between '2023-03-01' and '2023-03-31'
 )
 -- For each order, calculate the total quantity of items ordered.
+select order_id, (
+  sum(quantity)
+) as total_quantity from orderitems group by order_id order by order_id
