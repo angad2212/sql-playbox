@@ -58,6 +58,9 @@ select employee_id, name, department, salary,
 from employees;
 
 -- Find the percentage of completed orders vs total orders.
+select round(((sum(case when status = 'completed' then 1 else 0 end)) * 100.0 / 
+  count(*)), 2 )
+as percentage_of_completed_orders from orders
 
 -- Show customers whose first order was in January 2023.
 
