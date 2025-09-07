@@ -53,6 +53,9 @@ select * from employees where employee_id not in (
   select distinct manager_id from employees where manager_id is not null
 )
 -- Rank employees by salary within each department (use RANK()).
+select employee_id, name, department, salary,
+    rank() over (partition by department order by salary desc) as salary_rank
+from employees;
 
 -- Find the percentage of completed orders vs total orders.
 
