@@ -10,7 +10,7 @@ select customer_id, order_id, order_date, amount, sum(amount) over(
   order by order_date
   rows between unbounded preceding and current row
 ) as running_total
-from orders
+from orders 
 order by customer_id, order_date
 
 -- Find the order(s) with the highest revenue per product category.
