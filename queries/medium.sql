@@ -8,7 +8,7 @@ select
   count(*) as month_orders 
 from orders where order_date between '2023-01-01' and '2023-12-31'
 group by month 
-order by month
+order by month 
 
 -- List customers who ordered more than or equal to 3 products in total.
 select * from customers where customer_id in (
