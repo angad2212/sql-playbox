@@ -31,6 +31,13 @@ from ranked
 where rn = 1;
 
 -- Find the second-highest salary in each department.
+with ranked as (
+  select e.employee_id, e.name, e.department, e.salary, e.manager_id,
+  rank() over(partition by e.department order by e.salary desc) as rn
+  from employees e
+)
+select * from ranked 
+where rn = 2;
 
 -- For each customer, calculate the running total of their spending over time (WINDOW FUNCTION).
 select customer_id, order_id, order_date, amount, sum(amount) over(
