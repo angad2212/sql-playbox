@@ -42,4 +42,3 @@ CREATE TABLE Employees (
     salary DECIMAL(10,2),
     manager_id INT 
 );
- 
