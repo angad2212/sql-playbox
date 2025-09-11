@@ -40,6 +40,6 @@ CREATE TABLE Employees (
     name VARCHAR(100),
     department VARCHAR(50),
     salary DECIMAL(10,2),
-    manager_id INT
+    manager_id INT 
 );
  
