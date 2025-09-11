@@ -15,6 +15,20 @@ cross join average_spent a
 where t.total_amount > a.avg_val;
 
 -- Show the top-selling product in each category.
+with product_qty as (
+  select oi.product_id, sum(oi.quantity) as total_quantity
+  from orderitems oi
+  group by oi.product_id
+),
+ranked as (
+  select p.product_id, p.name, p.category, q.total_quantity,
+  row_number() over (partition by p.category order by q.total_quantity desc) as rn
+  from products p
+  join product_qty q on p.product_id = q.product_id
+)
+select product_id, name, category, total_quantity
+from ranked
+where rn = 1;
 
 -- Find the second-highest salary in each department.
 
