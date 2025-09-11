@@ -49,3 +49,17 @@ from orders
 order by customer_id, order_date
 
 -- Find the order(s) with the highest revenue per product category.
+with order_category_revenue as (
+  select p.category, oi.order_id, sum(oi.quantity * p.price) as revenue
+  from orderitems oi
+  join products p on oi.product_id = p.product_id
+  group by p.category, oi.order_id
+),
+ranked as (
+  select category, order_id, revenue,
+  row_number() over (partition by category order by revenue desc) as rn
+  from order_category_revenue
+)
+select category, order_id, revenue
+from ranked
+where rn = 1;
