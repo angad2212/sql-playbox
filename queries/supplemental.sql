@@ -40,7 +40,10 @@ select employee_id, name from employees where employee_id not in (
 )
 -- Q7: For each department, find the average salary and the highest salary.
 -- Output: department, avg_salary, max_salary
-
+select department, 
+  round(avg(salary), 2) as avg_salary, 
+  max(salary) as max_salary from employees
+group by department
 
 -- 🔴 HARD (3 Problems)
 
