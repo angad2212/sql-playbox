@@ -35,7 +35,9 @@ group by p.category;
 
 -- Q6: Find employees who do not manage anyone.
 -- Output: employee_id, name
-
+select employee_id, name from employees where employee_id not in (
+  select manager_id from employees where manager_id is not null
+)
 -- Q7: For each department, find the average salary and the highest salary.
 -- Output: department, avg_salary, max_salary
 
