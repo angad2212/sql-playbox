@@ -15,6 +15,10 @@ where o.status = 'completed';
 
 -- Q3: Find the total spending of each customer on completed orders.
 -- Output: customer_id, name, total_spent
+select o.customer_id, c.name, 
+sum(case when o.status = 'completed' then o.amount else 0 end) as total_spent
+from orders o join customers c on c.customer_id = o.customer_id
+group by o.customer_id, c.name
 
 -- Q4: List the top 3 most expensive products in the Products table.
 -- Output: product_id, name, price
