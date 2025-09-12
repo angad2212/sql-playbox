@@ -22,6 +22,7 @@ group by o.customer_id, c.name
 
 -- Q4: List the top 3 most expensive products in the Products table.
 -- Output: product_id, name, price
+select product_id, name, price from products order by price desc limit 3
 
 -- Q5: Find the number of products purchased in each category (consider only completed orders).
 -- Output: category, total_quantity
