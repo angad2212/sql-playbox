@@ -49,6 +49,13 @@ group by department
 
 -- Q8: Find the customer who placed the highest number of completed orders.
 -- Output: customer_id, name, order_count
+select c.customer_id, c.name, count(*) as order_count
+from orders o
+join customers c on o.customer_id = c.customer_id
+where o.status = 'completed'
+group by c.customer_id, c.name
+order by order_count desc
+limit 1;
 
 -- Q9: Find the second-highest salary in each department.
 -- Output: department, employee_name, salary
