@@ -2,10 +2,14 @@
 
 -- Q1: Find all customers who signed up in 2023.
 -- Output: customer_id, name, signup_date
+select customer_id, name, signup_date from customers
+where signup_date between '2023-01-01' and '2023-12-31'
 
 -- Q2: List all completed orders along with the customer’s name.
 -- Output: order_id, customer_name, amount
-
+select o.order_id, c.name as customer_name, o.amount from orders o
+join customers c on c.customer_id = o.customer_id
+where o.status = 'completed';
 
 -- 🟡 MEDIUM (5 Problems)
 
