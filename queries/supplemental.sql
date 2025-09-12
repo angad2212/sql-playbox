@@ -26,6 +26,12 @@ select product_id, name, price from products order by price desc limit 3
 
 -- Q5: Find the number of products purchased in each category (consider only completed orders).
 -- Output: category, total_quantity
+select p.category, sum(oi.quantity) as total_quantity
+from orderitems oi
+join products p on oi.product_id = p.product_id
+join orders o on oi.order_id = o.order_id
+where o.status = 'completed'
+group by p.category;
 
 -- Q6: Find employees who do not manage anyone.
 -- Output: employee_id, name
