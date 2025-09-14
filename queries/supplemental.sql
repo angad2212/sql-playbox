@@ -59,6 +59,16 @@ limit 1;
 
 -- Q9: Find the second-highest salary in each department.
 -- Output: department, employee_name, salary
+select department, name, salary from (
+  select employee_id, name, department, salary, 
+  rank() over(
+    partition by department
+    order by salary desc
+  ) as rn 
+  from employees
+)
+where rn = 2
+order by salary desc
 
 -- Q10: Find the top-selling product in each category (by total revenue).
 -- Output: category, product_name, total_revenue
