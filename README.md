@@ -5,7 +5,12 @@ This repository is a **complete SQL practice kit** designed to cover all the **e
 ---
 
 ## 🔹 What’s Inside?
-- **Database Setup**: A ready-to-use schema (`CompanyDB`) with tables for `Employees`, `Departments`, `Salaries`, `Projects`, and `Customers`.  
+- **Database Setup**: A ready-to-use schema with core business tables:  
+  - `Customers` → customer details  
+  - `Orders` → orders placed by customers  
+  - `Products` → product catalog  
+  - `OrderItems` → mapping between orders & products (many-to-many)  
+  - `Employees` → staff, departments, salaries, and reporting hierarchy  
 - **Practice Dataset**: Enough sample records to simulate real interview-style problems.  
 - **A Set of Curated SQL Problems** categorized by difficulty:  
   - **Easy** → Filtering, basic `SELECT`, `WHERE`, `ORDER BY`, `DISTINCT`, simple joins  
@@ -30,8 +35,21 @@ This repo ensures you practice **all major SQL concepts**, including:
 
 ---
 
-## 🔹 Why This Repo?
-- **Interview-focused**: Questions mimic real SQL interview challenges  
-- **Progressive Difficulty**: Start easy → move to medium → finish with hard  
-- **Hands-On**: Everything is query-based – no fluff, just practice  
-- **Self-contained**: One schema + data + queries = full practice environment  
+## 🔹 How to Get the Best Out of This Repo
+This isn’t just another SQL repo — it’s designed so you can **practice smart and effectively**:
+
+1. **Queries Folder**  
+   - Each file contains **commented-out SQL problems**.  
+   - Read the question in the comment → try writing your own solution → check the provided answer written right below.  
+   - This way, you learn by **active recall + immediate feedback**.  
+
+2. **Schema Folder**  
+   - Contains the full **database schema** shown above (customers, orders, products, order-items, employees).  
+   - Set it up locally in your preferred SQL environment (MySQL, PostgreSQL, etc.) to simulate real interview queries.  
+
+3. **Seeds Folder**  
+   - Pre-loaded **sample data** for all tables.  
+   - Insert this into your DB to test queries against realistic datasets.  
+   - You can also **modify or expand the data** to create your own variations and tougher test cases.  
+
+👉 Use the repo like a **self-contained SQL playground**: read, think, write queries, run them on your own DB, and compare with provided answers.  
