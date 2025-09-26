@@ -16,6 +16,8 @@ This repository is a **complete SQL practice kit** designed to cover all the **e
   - **Easy** → Filtering, basic `SELECT`, `WHERE`, `ORDER BY`, `DISTINCT`, simple joins  
   - **Medium** → Aggregations, multi-table joins, subqueries, `GROUP BY`, `HAVING`, set operations  
   - **Hard** → Window functions, advanced subqueries, CTEs, ranking queries, and complex joins  
+  - **Final Revision** → 10 supplemental problems that combine all levels and test almost every aspect of the repo  
+
 
 ---
 
